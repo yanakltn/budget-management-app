@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/budget-management-app/static/js/main.4f18a255.js",
+    "static/js/787.f1d63077.chunk.js": "/budget-management-app/static/js/787.f1d63077.chunk.js",
+    "static/media/user-icon.svg": "/budget-management-app/static/media/user-icon.73d2b99a4b00bf1360b1147e0dc7a2b9.svg",
+    "static/media/puma-icon.svg": "/budget-management-app/static/media/puma-icon.25b9d1fe37f212878e52c07c41e856c1.svg",
+    "static/media/nike-icon.svg": "/budget-management-app/static/media/nike-icon.6a1dd8f23ed2abd56eb160ceeae1f076.svg",
+    "static/media/settings-icon.svg": "/budget-management-app/static/media/settings-icon.9bbfa6f8d65ecc15aac05905c5777cae.svg",
+    "index.html": "/budget-management-app/index.html",
+    "static/media/notification-icon.svg": "/budget-management-app/static/media/notification-icon.1c6b07c2930b40b98356ab5f6bb7a919.svg",
+    "static/media/calendar-icon.svg": "/budget-management-app/static/media/calendar-icon.8b04d2e8b1a2e0419ae0286fc7ea809f.svg",
+    "static/media/expenses-icon.svg": "/budget-management-app/static/media/expenses-icon.e724dd6a1b1d2c5ed6a09013b7f5a52c.svg",
+    "static/media/home-icon.svg": "/budget-management-app/static/media/home-icon.1e519bbf6e9ff5cefebe2ce940315256.svg",
+    "static/media/master-card.svg": "/budget-management-app/static/media/master-card.0800bd3244108b916050cf30343d2441.svg",
+    "main.4f18a255.js.map": "/budget-management-app/static/js/main.4f18a255.js.map",
+    "787.f1d63077.chunk.js.map": "/budget-management-app/static/js/787.f1d63077.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.4f18a255.js"
+  ]
+}
