@@ -1,10 +1,14 @@
+// mui components
 import { Container } from "@mui/material";
+// components
 import Header from "../../components/Header/Header";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import ExpensesStatistics from "../../components/ExpensesStatistics/ExpensesStatistics";
 import AccountInfo from "../../components/AccountInfo/AccountInfo";
 import CalendarView from "../../components/CalendarView/CalendarView";
+// hooks
 import { useCallback, useState } from "react";
+// types
 import { ExpensesList } from "../../components/ExpensesStatistics/types";
 
 const Expenses = () => {

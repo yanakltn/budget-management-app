@@ -1,6 +1,7 @@
+//mui components
 import { Container } from "@mui/material";
+// components
 import Header from "../../components/Header/Header";
-
 import Card from "../../components/Card/Card";
 import Analytics from "../../components/Analytics/Analytics";
 import Transactions from "../../components/Transactions/Transactions";

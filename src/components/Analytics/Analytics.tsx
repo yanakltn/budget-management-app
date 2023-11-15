@@ -1,42 +1,13 @@
-import { Box, Button, Stack, Typography, styled } from "@mui/material";
+// mui components
+import { Box, Stack } from "@mui/material";
+// styles
 import { SectionTitleTypography } from "../commonStyles";
+import { AnalyticsButton, MonthTypography, StyledBarExpenses } from "./styles";
+//icons
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+// types
+import { MockAnalyticsData } from "./types";
 
-const AnalyticsButton = styled(Button)({
-  borderRadius: "12px",
-  background: "#FF653A",
-  boxShadow: "none",
-  color: "#FFF",
-  fontFamily: "Roboto",
-  fontSize: "13px",
-  fontStyle: "normal",
-  fontWeight: 400,
-  lineHeight: "normal",
-  "&.MuiButtonBase-root:hover": {
-    background: "#FF653A",
-  },
-});
-type MockAnalyticsDataType = {
-  amount: number;
-  month: string;
-  enabled: boolean;
-};
-const MockAnalyticsData: MockAnalyticsDataType[] = [
-  { amount: 1234, month: "Jan", enabled: false },
-  { amount: 2234, month: "Feb", enabled: false },
-  { amount: 5234, month: "Mar", enabled: true },
-  { amount: 2234, month: "Apr", enabled: false },
-  { amount: 1000, month: "May", enabled: false },
-  { amount: 2900, month: "Jun", enabled: false },
-  { amount: 3900, month: "Jul", enabled: false },
-];
-
-export const MonthTypography = styled(Typography)({
-  fontFamily: "Roboto",
-  fontStyle: "normal",
-  fontWeight: 400,
-  lineHeight: "normal",
-});
 const Analytics = () => {
   return (
     <Box marginBottom="32px">
@@ -60,12 +31,9 @@ const Analytics = () => {
               >
                 ${item.amount}
               </MonthTypography>
-              <Box
+              <StyledBarExpenses
                 height={Math.floor(item.amount / 33)}
-                width="31px"
                 bgcolor={item.enabled ? "#8234F8" : "#FAFAFA"}
-                borderRadius="6px 6px 0px 0px"
-                marginBottom="16px"
               />
               <MonthTypography
                 fontSize="13px"

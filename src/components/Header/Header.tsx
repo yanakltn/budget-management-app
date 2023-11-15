@@ -1,7 +1,9 @@
-import { Box, Stack, Typography } from "@mui/material";
+// assets
 import { ReactComponent as UserIcon } from "../../assets/user-icon.svg";
 import { ReactComponent as NotificationIcon } from "../../assets/notification-icon.svg";
+// styles
 import { SectionTitleTypography } from "../commonStyles";
+import { HeaderStack } from "./styles";
 
 type HeaderProps = {
   title: string;
@@ -9,16 +11,11 @@ type HeaderProps = {
 
 const Header = ({ title }: HeaderProps) => {
   return (
-    <Stack
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-      sx={{ marginBottom: "39px" }}
-    >
+    <HeaderStack direction="row">
       <UserIcon />
       <SectionTitleTypography>{title}</SectionTitleTypography>
       <NotificationIcon />
-    </Stack>
+    </HeaderStack>
   );
 };
 export default Header;

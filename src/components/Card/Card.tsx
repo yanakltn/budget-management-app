@@ -1,37 +1,23 @@
+// mui components
 import { Box, Stack } from "@mui/material";
+//assets
 import { ReactComponent as MasterCardIcon } from "../../assets/master-card.svg";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+// styles
 import {
   BalanceTypography,
+  CardContainer,
   CardNumberTypography,
   CardTitleTypography,
+  StyledCardBox,
+  StyledMoreHorizIcon,
 } from "./styles";
 
 const Card = () => {
   return (
     <Stack direction="column" alignItems="center" marginBottom="36px">
-      <Box
-        width={285}
-        height={34}
-        bgcolor={"#9A63FB"}
-        borderRadius={"24px 24px 0 0"}
-      />
-      <Box
-        width="100%"
-        height={187}
-        bgcolor={"#2F3046"}
-        borderRadius={"24px"}
-        padding={"23px 30px"}
-        position="relative"
-      >
-        <MoreHorizIcon
-          sx={{
-            position: "absolute",
-            top: "9px",
-            right: "27px",
-            color: "#FAFAFA",
-          }}
-        />
+      <CardContainer />
+      <StyledCardBox>
+        <StyledMoreHorizIcon />
         <CardTitleTypography marginBottom="16px">
           Total Balance
         </CardTitleTypography>
@@ -45,7 +31,7 @@ const Card = () => {
         <Box top="135px" right="30px" position="absolute">
           <MasterCardIcon />
         </Box>
-      </Box>
+      </StyledCardBox>
     </Stack>
   );
 };

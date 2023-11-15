@@ -1,5 +1,7 @@
 import React from "react";
+// react router
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+// components
 import HomePage from "./pages/HomePage/HomePage";
 import Expenses from "./pages/Expenses/Expenses";
 import { CssBaseline } from "@mui/material";

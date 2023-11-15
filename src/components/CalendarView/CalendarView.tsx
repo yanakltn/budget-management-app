@@ -1,30 +1,19 @@
+//mui icons
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
-import { Box, Stack, Typography, styled } from "@mui/material";
+// mui components
+import { Stack } from "@mui/material";
+// hooks
 import { useMemo } from "react";
+// types
 import { Expense } from "../ExpensesStatistics/types";
-
-enum WeekDay {
-  Monday = "M",
-  Tuesday = "T",
-  Wednesday = "W",
-  Thursday = "T",
-  Friday = "F",
-  Saturday = "S",
-  Sunday = "S",
-}
-
-type CalendarDate = {
-  weekDay: WeekDay;
-  date: Date;
-  hasExpenses: boolean;
-};
-
-const StyledTypography = styled(Typography)({
-  fontFamily: "Roboto",
-  fontSize: "16px",
-  fontStyle: "normal",
-  lineHeight: "normal",
-});
+import { CalendarDate, WeekDay } from "./types";
+// styles
+import {
+  ActiveDayBox,
+  CalendarViewContainer,
+  DayDot,
+  StyledTypography,
+} from "./styles";
 
 type CalendarViewProps = {
   selectedDate: Date;
@@ -80,34 +69,29 @@ const CalendarView = ({
   }, [startOfTheWeek, expenses]);
 
   return (
-    <Box
-      padding={"20px 14px"}
-      borderRadius={"21px"}
-      bgcolor={"#FAFAFA"}
-      mb={"32px"}
-    >
+    <CalendarViewContainer>
       <Stack mb={"16px"} direction={"row"} justifyContent={"space-between"}>
         <ChevronLeft onClick={handlePreviousWeek} sx={{ cursor: "pointer" }} />
-        <Typography>
+        <StyledTypography fontWeight={500}>
           {startOfTheWeek.toLocaleDateString("en-US", { month: "long" })}{" "}
           {startOfTheWeek.getFullYear()}
-        </Typography>
+        </StyledTypography>
         <ChevronRight onClick={handleNextWeek} sx={{ cursor: "pointer" }} />
       </Stack>
       <Stack direction={"row"} justifyContent={"space-between"}>
         {data.map((cur) => (
-          <Stack direction={"column"} key={cur.weekDay}>
-            <Typography align="center" mb="14px">
+          <Stack direction={"column"} key={+cur.date}>
+            <StyledTypography
+              fontWeight={+cur.date === +selectedDate ? 700 : 400}
+              color="#615C5C"
+              align="center"
+              mb="14px"
+            >
               {cur.weekDay}
-            </Typography>
-            <Box
-              borderRadius={"8px"}
+            </StyledTypography>
+            <ActiveDayBox
               bgcolor={+cur.date === +selectedDate ? "#FF643B" : undefined}
-              padding={"12px 10px 9px 10px"}
               onClick={() => cur.hasExpenses && handleSelectDate(cur.date)}
-              sx={{
-                cursor: "pointer",
-              }}
             >
               <StyledTypography
                 align="center"
@@ -117,19 +101,15 @@ const CalendarView = ({
               >
                 {cur.date.getDate()}
               </StyledTypography>
-              <Box
-                width={"6px"}
-                height={"6px"}
+              <DayDot
                 bgcolor={+cur.date === +selectedDate ? "#FFF" : "#A3A3A3"}
-                borderRadius={"100%"}
-                margin={"auto"}
                 visibility={cur.hasExpenses ? "visible" : "hidden"}
               />
-            </Box>
+            </ActiveDayBox>
           </Stack>
         ))}
       </Stack>
-    </Box>
+    </CalendarViewContainer>
   );
 };
 
