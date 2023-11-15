@@ -49,14 +49,13 @@ export const TransactionTitle = styled(Typography)({
 export const TransactionDescription = styled(Typography)({
   color: "#A3A3A3",
   fontFamily: "Roboto",
-  fontSize: "14px",
+  fontSize: "12px",
   fontStyle: "normal",
   fontWeight: 400,
   lineHeight: "normal",
 });
 
 export const TransactionAmount = styled(Typography)({
-  color: "#2BB272",
   fontFamily: "Roboto",
   fontSize: "18px",
   fontStyle: "normal",
@@ -72,8 +71,9 @@ const Transactions = () => {
         <ViewAllTypography>View all</ViewAllTypography>
       </Stack>
       <Stack direction="column" gap="16px">
-        {TransactionList.map((item) => (
+        {TransactionList.map((item, index) => (
           <Stack
+            key={index}
             direction="row"
             gap="16px"
             bgcolor="#FAFAFA"
@@ -85,7 +85,9 @@ const Transactions = () => {
             <Stack direction="column" width="100%" gap="4px">
               <Stack direction="row" justifyContent="space-between">
                 <TransactionTitle>{item.name}</TransactionTitle>
-                <TransactionAmount>${item.amount}</TransactionAmount>
+                <TransactionAmount color="#2BB272">
+                  ${item.amount}
+                </TransactionAmount>
               </Stack>
               <Stack direction="row" justifyContent="space-between">
                 <TransactionDescription>{item.from}</TransactionDescription>

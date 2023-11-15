@@ -52,8 +52,8 @@ const Analytics = () => {
           alignItems="flex-end"
           justifyContent="space-between"
         >
-          {MockAnalyticsData.map((item) => (
-            <Stack direction="column" alignItems="center">
+          {MockAnalyticsData.map((item, index) => (
+            <Stack direction="column" alignItems="center" key={index}>
               <MonthTypography
                 fontSize="10px"
                 color={item.enabled ? "#8234F8" : "#A3A3A3"}
